@@ -114,8 +114,8 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 ## Data de Entrega
 
-    - Serão `X` dias de projeto.
-    - Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
+    - Serão `3` dias de projeto.
+    - Data de entrega para avaliação final do projeto: `10/03/2021 - 14:00h`.
 
 ---
 
@@ -125,9 +125,9 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 1. Clone o repositório
 
-- `git clone https://github.com/tryber/sd-0x-cookmaster.git`.
+- `git clone https://github.com/tryber/sd-06-cookmaster.git`.
 - Entre na pasta do repositório que você acabou de clonar:
-  - `cd sd-0x-cookmaster`
+  - `cd sd-06-cookmaster`
 
 2. Instale as dependências [**Caso existam**]
 
@@ -141,7 +141,7 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
   - Exemplo: `git checkout master`
 - Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
   - Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-  - Exemplo: `git checkout -b joaozinho-sd-0x-cookmaster`
+  - Exemplo: `git checkout -b joaozinho-sd-06-cookmaster`
 
 4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
 
@@ -158,17 +158,17 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 
 5. Adicione a sua branch com o novo `commit` ao repositório remoto
 
-- Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-cookmaster`
+- Usando o exemplo anterior: `git push -u origin joaozinho-sd-06-cookmaster`
 
 6. Crie um novo `Pull Request` _(PR)_
 
-- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-cookmaster/pulls)
+- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-06-cookmaster/pulls)
 - Clique no botão verde _"New pull request"_
 - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
 - Clique no botão verde _"Create pull request"_
 - Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
 - **Não se preocupe em preencher mais nada por enquanto!**
-- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-cookmaster/pulls) e confira que o seu _Pull Request_ está criado
+- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-06-cookmaster/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
@@ -182,7 +182,7 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
   1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
   2. `git add` _(para adicionar arquivos ao stage do Git)_
   3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  4. `git push -u origin nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
   5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
 
 ---
