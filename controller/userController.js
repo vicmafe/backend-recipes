@@ -9,14 +9,17 @@ const {
 
 const router = Router();
 const NOT_FOUND = 400;
+const CONFLICT = 409;
 const CREATED = 201;
 
 const err = {
   status: NOT_FOUND,
-  message: '',
+  messageObject: {
+    message: '',
+  },
 };
 
-const user = {
+const userSend = {
   name: '',
   email: '',
   role: 'user',
@@ -25,17 +28,19 @@ const user = {
 router.post('/', async (req, res, next) => {
   const { name, email, password } = req.body;
   if (!verifyDataExists(name, email, password) || !verifyEmailFormat(email)) {
-    err.message = 'Invalid entries. Try again';
+    err.messageObject.message = 'Invalid entries. Try again.';
     return next(err);
   }
   if (await verifyEmailExist(email)) {
-    err.message = 'Email already registered';
+    err.status = CONFLICT;
+    err.messageObject.message = 'Email already registered';
     return next(err);
   }
-  user.name = name;
-  user.email = email;
-  await postUser(user);
-  const userAdded = await lastUserData();
+  userSend.name = name;
+  userSend.email = email;
+  await postUser(userSend);
+  const user = await lastUserData();
+  const userAdded = { user };
   return res.status(CREATED).send(userAdded);
 });
 

@@ -15,8 +15,8 @@ app.get('/', (request, response) => {
 });
 
 app.use((err, _req, res, _next) => {
-  const { status, message } = err;
-  return res.status(status).json(message);
+  const { status, messageObject } = err;
+  return res.status(status).json(messageObject);
 });
 
 app.listen(PORT, () => console.log('to na porta:', PORT));
