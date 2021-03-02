@@ -13,7 +13,7 @@ const CONFLICT = 409;
 const CREATED = 201;
 
 const err = {
-  status: NOT_FOUND,
+  status: 0,
   messageObject: {
     message: '',
   },
@@ -28,6 +28,7 @@ const userSend = {
 router.post('/', async (req, res, next) => {
   const { name, email, password } = req.body;
   if (!verifyDataExists(name, email, password) || !verifyEmailFormat(email)) {
+    err.status = NOT_FOUND;
     err.messageObject.message = 'Invalid entries. Try again.';
     return next(err);
   }
