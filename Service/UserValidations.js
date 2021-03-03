@@ -1,7 +1,21 @@
 const { getAllUsers } = require('../models/cookmodel');
 
-const verifyDataExists = (name, email, password) => {
-  if (!name || !email || !password) {
+const verifyNameExists = (name) => {
+  if (!name) {
+    return false;
+  }
+  return true;
+};
+
+const verifyEmailExists = (email) => {
+  if (!email) {
+    return false;
+  }
+  return true;
+};
+
+const verifyPasswordExists = (password) => {
+  if (!password) {
     return false;
   }
   return true;
@@ -12,7 +26,7 @@ const verifyEmailFormat = (email) => {
   return expectedFormat.test(email);
 };
 
-const verifyEmailExist = async (email) => {
+const verifyEmailAlreadyExist = async (email) => {
   const allUsers = await getAllUsers();
   const searchEmail = allUsers.find((user) => user.email === email);
   if (searchEmail) {
@@ -21,8 +35,21 @@ const verifyEmailExist = async (email) => {
   return false;
 };
 
+const existSetData = (name, email, password) => {
+  const nameExist = verifyNameExists(name);
+  const emailExist = verifyEmailExists(email);
+  const passwordExist = verifyPasswordExists(password);
+  if (nameExist && emailExist && passwordExist) {
+    return true;
+  }
+  return false;
+};
+
 module.exports = {
-  verifyDataExists,
+  verifyNameExists,
+  verifyEmailExists,
+  verifyPasswordExists,
   verifyEmailFormat,
-  verifyEmailExist,
+  verifyEmailAlreadyExist,
+  existSetData,
 };
