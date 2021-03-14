@@ -35,4 +35,6 @@ router.get('/:id', verifyExistRecipe, async (req, res) => {
   return res.status(SUCCESS).json(foundedRecipe);
 });
 
+router.post('/');
+
 module.exports = router;

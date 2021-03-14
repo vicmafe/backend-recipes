@@ -1,4 +1,4 @@
-const { getAllUsers, findByPassword, createUser } = require('../models/userModel');
+const { findByPassword, createUser, getUserRole } = require('../models/userModel');
 
 const postUser = async (user) => {
   try {
@@ -10,7 +10,7 @@ const postUser = async (user) => {
 };
 
 const lastUserData = async () => {
-  const allUsers = await getAllUsers();
+  const allUsers = await getUserRole();
   const lastUserIndex = allUsers.length - 1;
   return allUsers[lastUserIndex];
 };
