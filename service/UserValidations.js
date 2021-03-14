@@ -1,4 +1,4 @@
-const { getAllUsers } = require('../models/cookmodel');
+const { getAllUsers } = require('../models/userModel');
 
 const verifyNameExists = (name) => {
   if (!name) {

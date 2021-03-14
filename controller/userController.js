@@ -1,11 +1,10 @@
 const { Router } = require('express');
-const { postUser } = require('../models/cookmodel');
-const { lastUserData } = require('../Service/userServices');
+const { lastUserData, postUser } = require('../service/userServices');
 const {
   existSetData,
   verifyEmailFormat,
   verifyEmailAlreadyExist,
-} = require('../Service/UserValidations');
+} = require('../service/UserValidations');
 
 const router = Router();
 const NOT_FOUND = 400;

@@ -1,6 +1,7 @@
 const { Router } = require('express');
-const { verifyEmailFormat } = require('../Service/UserValidations');
-const { rightPassword } = require('../Service/userServices');
+const { verifyEmailFormat } = require('../service/UserValidations');
+const { rightPassword } = require('../service/userServices');
+const createToken = require('../auth/createToken');
 
 const router = Router();
 const SUCCESS = 200;
@@ -15,16 +16,19 @@ const err = {
 router.post('/', async (req, res, next) => {
   const { email, password } = req.body;
   const emailFormat = verifyEmailFormat(email);
-  const userRefPasswor = await rightPassword(password);
+  const userRefPassword = await rightPassword(password);
+  console.log('usuario referente ao password', userRefPassword);
   if (!email || !password) {
     err.messageObject.message = 'All fields must be filled';
     return next(err);
   }
-  if (!emailFormat || !userRefPasswor) {
+  if (!emailFormat || !userRefPassword) {
     err.messageObject.message = 'Incorrect username or password';
     return next(err);
   }
-  return res.status(SUCCESS).json('uhuu rodando liso');
+  const { password: passwordDB, ...userWithoutPassword } = userRefPassword;
+  const tokenGenered = createToken(userWithoutPassword);
+  return res.status(SUCCESS).json({ token: tokenGenered });
 });
 
 module.exports = router;

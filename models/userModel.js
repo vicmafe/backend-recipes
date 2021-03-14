@@ -4,7 +4,7 @@ const getAllUsers = async () =>
   connection()
     .then((db) => db.collection('users').find().toArray());
 
-const postUser = async (user) => {
+const createUser = async (user) => {
   const { name, email, role, password } = user;
   connection()
     .then((db) => db.collection('users')
@@ -27,7 +27,7 @@ const findByPassword = async (password) => {
 };
 
 module.exports = {
-  postUser,
+  createUser,
   getAllUsers,
   findByPassword,
 };
