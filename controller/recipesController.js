@@ -1,4 +1,18 @@
 const { Router } = require('express');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, 'uploads');
+  },
+  filename: (req, file, callback) => {
+    const { id } = req.params;
+    callback(null, `${id}.jpeg`);
+  },
+});
+
+const upload = multer({ storage });
+
 const {
   newRecipe,
   lastRecipe,
@@ -6,6 +20,7 @@ const {
   findRecipeById,
   toUpdateRecipe,
   recipeToDelete,
+  pushImageRecipe,
 } = require('../service/recipeServices');
 const {
   validateRecipe,
@@ -51,6 +66,16 @@ router.delete('/:id', verifyAuthorization, async (req, res) => {
   const { id } = req.params;
   await recipeToDelete(id);
   return res.status(NO_CONTENT).json();
+});
+
+router.put('/:id/image/', verifyExistRecipe, verifyAuthorization,
+  upload.single('image'), async (req, res) => {
+  const { id } = req.params;
+  const searchRecipe = await findRecipeById(id);
+  searchRecipe.image = `localhost:3000/images/${id}.jpeg`;
+  const objectToAddImage = { id, searchRecipe };
+  await pushImageRecipe(objectToAddImage);
+  res.status(SUCCESS).json(searchRecipe);
 });
 
 module.exports = router;
