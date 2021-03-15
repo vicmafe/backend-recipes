@@ -27,7 +27,6 @@ return product;
 };
 
 const updateRecipes = async (id, recipeToUpdate) => {
-  console.log('usermodel:', id);
   const { name, ingredients, preparation, userId } = recipeToUpdate;
   await connection().then((db) => {
     db.collection('recipes')
@@ -36,9 +35,15 @@ const updateRecipes = async (id, recipeToUpdate) => {
   return recipeToUpdate;
 };
 
+const deleteRecipes = async (id) => {
+  await connection().then((db) =>
+    db.collection('recipes').deleteOne({ _id: ObjectId(id) }));
+};
+
 module.exports = {
   getAllRecipes,
   createNewRecipe,
   findRecipe,
   updateRecipes,
+  deleteRecipes,
 };

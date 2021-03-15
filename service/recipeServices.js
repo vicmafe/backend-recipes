@@ -44,10 +44,19 @@ const toUpdateRecipe = async (id, recipe) => {
   }
 };
 
+const recipeToDelete = async (id) => {
+  try {
+    return await deleteRecipes(id);
+  } catch (e) {
+    return null;
+  }
+};
+
 module.exports = {
   newRecipe,
   lastRecipe,
   searchAllRecipes,
   findRecipeById,
   toUpdateRecipe,
+  recipeToDelete,
 };
