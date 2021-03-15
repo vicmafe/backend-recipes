@@ -1,4 +1,9 @@
-const { getAllRecipes, createNewRecipe, findRecipe } = require('../models/recipeModel');
+const {
+  getAllRecipes,
+  createNewRecipe,
+  findRecipe,
+  updateRecipes,
+} = require('../models/recipeModel');
 
 const newRecipe = async (recipe) => {
   try {
@@ -31,9 +36,18 @@ const findRecipeById = async (id) => {
   }
 };
 
+const toUpdateRecipe = async (id, recipe) => {
+  try {
+    return await updateRecipes(id, recipe);
+  } catch (e) {
+    return null;
+  }
+};
+
 module.exports = {
   newRecipe,
   lastRecipe,
   searchAllRecipes,
   findRecipeById,
+  toUpdateRecipe,
 };

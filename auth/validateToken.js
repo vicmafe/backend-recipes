@@ -3,11 +3,8 @@ const jwt = require('jsonwebtoken');
 const secret = 'vicmat';
 
 const validateToken = (token) => {
-  try {
-    return jwt.verify(token, secret);
-  } catch (e) {
-    return null;
-  }
+  const check = jwt.decode(token, secret);
+  return check;
 };
 
 module.exports = validateToken;

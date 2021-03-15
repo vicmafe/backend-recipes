@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb');
 const connection = require('./connection');
 
 const getAllUsers = async () =>
@@ -33,6 +34,6 @@ const findByPassword = async (password) => {
 module.exports = {
   createUser,
   getAllUsers,
-  findByPassword,
   getUserRole,
+  findByPassword,
 };

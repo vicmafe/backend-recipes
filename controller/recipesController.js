@@ -4,6 +4,7 @@ const {
   lastRecipe,
   searchAllRecipes,
   findRecipeById,
+  toUpdateRecipe,
 } = require('../service/recipeServices');
 const {
   validateRecipe,
@@ -35,6 +36,13 @@ router.get('/:id', verifyExistRecipe, async (req, res) => {
   return res.status(SUCCESS).json(foundedRecipe);
 });
 
-router.post('/');
+router.put('/:id', verifyExistRecipe, verifyAuthorization, async (req, res) => {
+  const { id } = req.params;
+  const recipeToUpdate = req.body;
+  const foundedRecipe = await findRecipeById(id);
+  recipeToUpdate.userId = foundedRecipe.userId;
+  const recipe = await toUpdateRecipe(id, recipeToUpdate);
+  res.status(SUCCESS).json(recipe);
+});
 
 module.exports = router;

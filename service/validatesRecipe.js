@@ -1,5 +1,6 @@
 const validateToken = require('../auth/validateToken');
 const { findRecipeById } = require('./recipeServices');
+// const getUserRole = require('../models/userModel');
 
 const UNAUTHORIZED = 401;
 const BAD_REQUEST = 400;
@@ -12,19 +13,24 @@ const err = {
   },
 };
 
-const verifyAuthorization = (req, res, next) => {
+const verifyAuthorization = (req, _res, next) => {
   const { authorization: token } = req.headers;
   const payload = validateToken(token);
-  if (!token || !payload) {
+  if (!token) {
+    err.status = UNAUTHORIZED;
+    err.messageObject.message = 'missing auth token';
+    return next(err);
+  }
+  if (!payload) {
     err.status = UNAUTHORIZED;
     err.messageObject.message = 'jwt malformed';
     return next(err);
   }
   req.payload = payload;
-  return next();
+  next();
 };
 
-const validateRecipe = (req, res, next) => {
+const validateRecipe = (req, _res, next) => {
   const { name, ingredients, preparation } = req.body;
   if (!name || !ingredients || !preparation) {
     err.status = BAD_REQUEST;
