@@ -32,7 +32,7 @@ jobs:
         uses: betrybe/jest-evaluator-action@v7
         with:
           repository-test-name: 'betrybe/sd-0x-cookmaster-v2-tests'
-          repository-test-branch: 'master'
+          repository-test-branch: 'turma6'
           npm-start: true
       - name: Store evaluation step
         uses: betrybe/store-evaluation-action@v2
