@@ -78,4 +78,9 @@ router.put('/:id/image/', verifyExistRecipe, verifyAuthorization,
   res.status(SUCCESS).json(searchRecipe);
 });
 
+router.get('/images/:id', (req, res) => {
+  const { id } = req.params;
+  return res.status(SUCCESS).json(id);
+});
+
 module.exports = router;
