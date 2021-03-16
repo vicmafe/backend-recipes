@@ -46,6 +46,14 @@ const addImageInRecipe = async (objectToAddImage) => {
   });
 };
 
+const getImageRecipe = async (id) => {
+  const imageRecipe = await connection()
+    .then((db) => db.collection('recipes')
+      .findOne({ image: `localhost:3000/images/${ObjectId(id)}.jpeg` }))
+      .catch(() => false);
+  return imageRecipe;
+};
+
 module.exports = {
   getAllRecipes,
   createNewRecipe,
@@ -53,4 +61,5 @@ module.exports = {
   updateRecipes,
   deleteRecipes,
   addImageInRecipe,
+  getImageRecipe,
 };

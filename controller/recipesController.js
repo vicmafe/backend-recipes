@@ -21,6 +21,7 @@ const {
   toUpdateRecipe,
   recipeToDelete,
   pushImageRecipe,
+  searchImage,
 } = require('../service/recipeServices');
 const {
   validateRecipe,
@@ -78,9 +79,10 @@ router.put('/:id/image/', verifyExistRecipe, verifyAuthorization,
   res.status(SUCCESS).json(searchRecipe);
 });
 
-router.get('/images/:id', (req, res) => {
+router.get('/images/:id', async (req, res) => {
   const { id } = req.params;
-  return res.status(SUCCESS).json(id);
+  const foundedImage = await searchImage(id);
+  return res.status(SUCCESS).send(foundedImage);
 });
 
 module.exports = router;
