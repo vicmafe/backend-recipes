@@ -10,8 +10,7 @@ const {
 
 const newRecipe = async (recipe) => {
   try {
-    await createNewRecipe(recipe);
-    return true;
+    return await createNewRecipe(recipe);
   } catch (e) {
     return null;
   }

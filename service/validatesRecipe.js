@@ -1,6 +1,5 @@
 const validateToken = require('../auth/validateToken');
 const { findRecipeById } = require('./recipeServices');
-// const getUserRole = require('../models/userModel');
 
 const UNAUTHORIZED = 401;
 const BAD_REQUEST = 400;

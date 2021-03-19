@@ -2,8 +2,7 @@ const { findByPassword, createUser, getUserRole } = require('../models/userModel
 
 const postUser = async (user) => {
   try {
-    await createUser(user);
-    return true;
+    return await createUser(user);
   } catch (e) {
     return null;
   }

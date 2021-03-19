@@ -4,13 +4,9 @@ const getAllUsers = async () =>
   connection()
     .then((db) => db.collection('users').find().toArray());
 
-const getUserRole = async () =>
-  connection()
-    .then((db) => db.collection('users').find({ role: 'user' }).toArray());
-
 const createUser = async (user) => {
   const { name, email, role, password } = user;
-  connection()
+  return connection()
     .then((db) => db.collection('users')
       .insertOne(({
         name,
@@ -26,13 +22,11 @@ const findByPassword = async (password) => {
       .collection('users')
       .findOne({ password }))
       .catch(() => false);
-    console.log('qual usuario da password?', userPassword);
   return userPassword;
 };
 
 module.exports = {
   createUser,
   getAllUsers,
-  getUserRole,
   findByPassword,
 };

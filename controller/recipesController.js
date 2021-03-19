@@ -15,7 +15,6 @@ const upload = multer({ storage });
 
 const {
   newRecipe,
-  lastRecipe,
   searchAllRecipes,
   findRecipeById,
   toUpdateRecipe,
@@ -38,9 +37,8 @@ router.post('/', validateRecipe, verifyAuthorization, async (req, res) => {
   const recipeBody = req.body;
   const { _id } = req.payload;
   recipeBody.userId = _id;
-  await newRecipe(recipeBody);
-  const recipe = await lastRecipe(recipeBody);
-  return res.status(CREATED).json({ recipe });
+  const addNewRecipe = await newRecipe(recipeBody);
+  return res.status(CREATED).json({ recipe: addNewRecipe.ops[0] });
 });
 
 router.get('/', async (_req, res, _next) => {

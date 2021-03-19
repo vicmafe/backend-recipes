@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { lastUserData, postUser } = require('../service/userServices');
+const { postUser } = require('../service/userServices');
 const {
   existSetData,
   verifyEmailFormat,
@@ -23,6 +23,7 @@ const userSend = {
   email: '',
   password: '',
   role: 'user',
+  _id: '',
 };
 
 router.post('/', async (req, res, next) => {
@@ -40,10 +41,9 @@ router.post('/', async (req, res, next) => {
   userSend.name = name;
   userSend.email = email;
   userSend.password = password;
-  await postUser(userSend);
-  const user = await lastUserData();
-  const userAdded = { user };
-  return res.status(CREATED).send(userAdded);
+  const newUser = await postUser(userSend);
+
+  return res.status(CREATED).json({ user: newUser.ops[0] });
 });
 
 module.exports = router;
