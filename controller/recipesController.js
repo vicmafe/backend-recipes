@@ -20,7 +20,7 @@ const {
   toUpdateRecipe,
   recipeToDelete,
   pushImageRecipe,
-  searchImage,
+  // searchImage,
 } = require('../service/recipeServices');
 const {
   validateRecipe,
@@ -79,7 +79,11 @@ router.put('/:id/image/', verifyExistRecipe, verifyAuthorization,
 
 router.get('/images/:id', async (req, res) => {
   const { id } = req.params;
-  const foundedImage = await searchImage(id);
+  console.log('id controller:', id);
+  const idSJpg = id.substr(0, id.length - 5);
+  console.log('id sem jpg controller:', idSJpg);
+  const foundedImage = await findRecipeById(id);
+  console.log('receita controller:', foundedImage);
   return res.status(SUCCESS).send(foundedImage);
 });
 

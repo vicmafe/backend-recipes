@@ -17,7 +17,6 @@ router.post('/', async (req, res, next) => {
   const { email, password } = req.body;
   const emailFormat = verifyEmailFormat(email);
   const userRefPassword = await rightPassword(password);
-  console.log('usuario referente ao password', userRefPassword);
   if (!email || !password) {
     err.messageObject.message = 'All fields must be filled';
     return next(err);
