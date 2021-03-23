@@ -20,7 +20,6 @@ const {
   toUpdateRecipe,
   recipeToDelete,
   pushImageRecipe,
-  // searchImage,
 } = require('../service/recipeServices');
 const {
   validateRecipe,
