@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const userController = require('./controller/userController');
@@ -14,6 +15,8 @@ app.use('/users', userController);
 app.use('/login', loginController);
 
 app.use('/recipes', recipesController);
+
+app.use('/images', express.static(path.join(__dirname, '/uploads')));
 
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
