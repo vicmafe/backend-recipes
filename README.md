@@ -231,7 +231,7 @@ Desenvolver backend de um crud de receitas, utilizando nodejs com auxilio do exp
   ## Sobre o autor
 
 <a href="https://www.linkedin.com/in/victor-mateus-ferreira/" align="center">
- (./Avatar.jpeg")
+ <img style={border-radius: 50%} src="./Avatar.jpeg" width="200px;" alt=""/>
  <br>
  <sub><b>Victor Mateus </b></sub>🚀</a><br>
 <br>
