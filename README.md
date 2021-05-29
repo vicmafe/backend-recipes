@@ -240,15 +240,13 @@ Para rodar localmente, siga os passos:
 
 3 - Instale as dependencias na pasta raiz do projeto digitando: npm install;
 
-4 - Instale o express e os pactoes nodemon e body-parser digitando: npm install express nodemon -D body-parser;
+4 - Instale a lib express e os pactoes nodemon e body-parser, digitando: npm install express nodemon -D body-parser;
 
-5 - Instale os pactoes nodemon e body-parser digitando: npm install nodemon -D body-parser;
+5 - Assim que finalizar a instalação, rode a aplicação digitando: npm start;
 
-6 - Assim que finalizar a instalação, rode a aplicação digitando: npm start;
+6 - Utilize uma ferramenta para testar serviços RESTfull (Web APis) como Postman ou Insomnia e teste os endpoints dos requisitos;
 
-7 - Utilize uma ferramenta para testar serviços RESTfull (Web APis) como Postman ou Insomnia e teste os endpoints dos requisitos;
-
-8 - É possivel rodar a suite de testes digitando: npm test;
+7 - É possivel rodar a suite de testes digitando: npm test;
 
 **IMPORTANTE: É necessario ter MongoDB instalado e rodando na sua máquina previamente.**
 
