@@ -25,6 +25,8 @@ Construção aplicação backend, aplicando validações, utilizando arquitetura
     - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
   - [Bônus](#bônus)
     - [11 - Cadastramento de admin](#11---cadastramento-de-admin)
+  - [Como rodar](#como-rodar)
+  - [Sobre autor](#sobre-autor)
 
 ---
 
@@ -228,19 +230,30 @@ Desenvolver backend de um crud de receitas, utilizando nodejs com auxilio do exp
   }
   ```
   
-  ## Como rodar
+## Como rodar
 
-  Para rodar localmente, siga os passos:<br>
-  1 - Abra um terminal;<br>
-  2 - Clone este repositorio;<br>
-  3 - Instale as dependencias na pasta raiz do projeto digitando: npm install;<br>
-  4 - Instale o express, digite: npm install express;<br>
-  5 - Instale os pactoes nodemon e body-parser digitando: npm install nodemon -D body-parser;<br>
-  6 - Assim que finalizar a instalação, rode a aplicação digitando: npm start ou yarn start;<br>
-  7 - Utilize uma ferramenta para testar serviços RESTfull (Web APis) Postman ou Insonia e teste os endpoints dos requisitos;<br>
-  **É necessario ter MongoDB instalado e rodando na sua máquina previamente**
-  
-  ## Sobre o autor
+Para rodar localmente, siga os passos:
+
+1 - Abra um terminal;
+
+2 - Clone este repositorio;
+
+3 - Instale as dependencias na pasta raiz do projeto digitando: npm install;
+
+4 - Instale o express, digite: npm install express;
+
+5 - Instale os pactoes nodemon e body-parser digitando: npm install nodemon -D body-parser;
+
+6 - Assim que finalizar a instalação, rode a aplicação digitando: npm start;
+
+7 - Utilize uma ferramenta para testar serviços RESTfull (Web APis) como Postman ou Insonia e teste os endpoints dos requisitos;
+
+8 - É possivel rodar a suite de testes digitando: npm test;
+
+**É necessario ter MongoDB instalado e rodando na sua máquina previamente**
+
+
+## Sobre o autor
 
 <a href="https://www.linkedin.com/in/victor-mateus-ferreira/" align="center">
  <img style={border-radius: 50%} src="./AvatarII.jpeg" width="200px;" alt=""/>
