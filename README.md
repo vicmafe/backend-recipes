@@ -8,8 +8,8 @@ Construção aplicação backend, aplicando validações, utilizando arquitetura
 
 # Sumário
 
-- [Objetivo do projeto](#entregáveis)
-- [Habilidades desenvolvidas](#habilidades)
+- [Objetivo do projeto](#objetivo-do-projeto)
+- [Habilidades desenvolvidas](#habilidades-desenvolvidas)
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Lista de requisitos](#lista-de-requisitos)
     - [Todos os seus endpoints devem estar no padrão REST](#todos-os-seus-endpoints-devem-estar-no-padrão-rest)
