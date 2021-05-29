@@ -1,4 +1,4 @@
-### Projeto Cookmaster
+# Projeto Cookmaster
 
 
 # Sobre o projeto
@@ -227,6 +227,18 @@ Desenvolver backend de um crud de receitas, utilizando nodejs com auxilio do exp
     "password": "string"
   }
   ```
+  
+  ## Como rodar
+
+  Para rodar localmente, siga os passos:<br>
+  1 - Abra um terminal;<br>
+  2 - Clone este repositorio;<br>
+  3 - Instale as dependencias na pasta raiz do projeto digitando: npm install;<br>
+  4 - Instale o express, digite: npm install express;<br>
+  5 - Instale os pactoes nodemon e body-parser digitando: npm install nodemon -D body-parser;<br>
+  6 - Assim que finalizar a instalação, rode a aplicação digitando: npm start ou yarn start;<br>
+  7 - Utilize uma ferramenta para testar serviços RESTfull (Web APis) Postman ou Insonia e teste os endpoints dos requisitos;<br>
+  **É necessario ter MongoDB instalado e rodando na sua máquina previamente**
   
   ## Sobre o autor
 
