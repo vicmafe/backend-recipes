@@ -156,7 +156,7 @@ Desenvolver backend de um crud de receitas, utilizando nodejs com auxilio do exp
 
 `{ name: 'admin', email: 'root@email.com', password: 'admin', role: 'admin' }`
 
-**Obs.:** Esse usuário tem o poder de criar, deletar, atualizar ou remover qualquer receita, independente de quem a cadastrou. Isso será solicitado ao longo dos próximos requisitos.
+**Obs.:** Esse usuário tem o poder de criar, deletar, atualizar ou remover qualquer receita, independente de quem a cadastrou. 
 
 
 ### 7 - Crie um endpoint para a edição de uma receita
@@ -230,7 +230,7 @@ Desenvolver backend de um crud de receitas, utilizando nodejs com auxilio do exp
   }
   ```
   
-## Como rodar
+# Como rodar
 
 Para rodar localmente, siga os passos:
 
@@ -240,28 +240,28 @@ Para rodar localmente, siga os passos:
 
 3 - Instale as dependencias na pasta raiz do projeto digitando: npm install;
 
-4 - Instale o express, digite: npm install express;
+4 - Instale o express e os pactoes nodemon e body-parser digitando: npm install express nodemon -D body-parser;
 
 5 - Instale os pactoes nodemon e body-parser digitando: npm install nodemon -D body-parser;
 
 6 - Assim que finalizar a instalação, rode a aplicação digitando: npm start;
 
-7 - Utilize uma ferramenta para testar serviços RESTfull (Web APis) como Postman ou Insonia e teste os endpoints dos requisitos;
+7 - Utilize uma ferramenta para testar serviços RESTfull (Web APis) como Postman ou Insomnia e teste os endpoints dos requisitos;
 
 8 - É possivel rodar a suite de testes digitando: npm test;
 
-**É necessario ter MongoDB instalado e rodando na sua máquina previamente**
+**IMPORTANTE: É necessario ter MongoDB instalado e rodando na sua máquina previamente.**
 
 
-## Sobre o autor
+# Sobre o autor
 
 <a href="https://www.linkedin.com/in/victor-mateus-ferreira/" align="center">
- <img style={border-radius: 50%} src="./AvatarII.jpeg" width="200px;" alt=""/>
+ <img style={border-radius: 100p} src="./AvatarII.jpeg" width="200px;" alt=""/>
  <br>
  <sub><b>Victor Mateus </b></sub>🚀</a><br>
 <br>
 
 <p>
-Feito com ❤️ por Victor Mateus 👋🏽<br>
-Entre em contato!
+Feito com ❤️ por Victor Mateus<br>
+👋🏽 Entre em contato!
 </p>
