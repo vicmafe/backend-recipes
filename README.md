@@ -25,15 +25,15 @@ Construção aplicação backend, aplicando validações, utilizando arquitetura
     - [10 - Crie um endpoint para acessar a imagem de uma receita](#10---crie-um-endpoint-para-acessar-a-imagem-de-uma-receita)
   - [Bônus](#bônus)
     - [11 - Cadastramento de admin](#11---cadastramento-de-admin)
-  - [Como rodar](#como-rodar)
-  - [Sobre autor](#sobre-autor)
+- [Como rodar](#como-rodar)
+- [Sobre o autor](#sobre-o-autor)
 
 ---
 
 
 # Objetivo do projeto:
 
-Desenvolver backend de um crud de receitas, utilizando nodejs com auxilio do express, construir endpoints com conexão ao banco de dados não relacional, MongoDb. 
+Desenvolver backend de um crud de receitas, utilizando nodejs com auxilio do express, construir endpoints com conexão ao banco de dados não relacional, MongoDB. 
 
 ---
 
@@ -254,7 +254,7 @@ Para rodar localmente, siga os passos:
 # Sobre o autor
 
 <a href="https://www.linkedin.com/in/victor-mateus-ferreira/" align="center">
- <img style={border-radius: "50%"} src="./AvatarII.jpeg" width="200px;" alt=""/>
+ <img style={border-radius: "100px"} src="./AvatarII.jpeg" width="200px;" alt=""/>
  <br>
  <sub><b>Victor Mateus </b></sub>🚀</a><br>
 <br>
