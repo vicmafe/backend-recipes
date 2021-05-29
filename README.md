@@ -254,7 +254,7 @@ Para rodar localmente, siga os passos:
 # Sobre o autor
 
 <a href="https://www.linkedin.com/in/victor-mateus-ferreira/" align="center">
- <img style={border-radius: 100px} src="./AvatarII.jpeg" width="200px;" alt=""/>
+ <img style={border-radius: "50%"} src="./AvatarII.jpeg" width="200px;" alt=""/>
  <br>
  <sub><b>Victor Mateus </b></sub>🚀</a><br>
 <br>
